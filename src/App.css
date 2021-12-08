@@ -1,0 +1,12 @@
+.card {
+  text-align: center;
+}
+
+form svg {
+  position: absolute;
+  background-color: #2c2c2c;
+  margin-top: 6px;
+  margin-left: -5px;
+  border-radius: 3px;
+  padding: 5px
+}
