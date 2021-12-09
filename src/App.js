@@ -2,24 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Input } from "reactstrap";
 import axios from "axios";
 import "./App.css";
-import rocket from "./assets/rocket.svg";
 import Card from "./components/Card";
 import Select from "./components/Select";
-// import Search from "./components/Search";
+import Header from "./components/Header";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+export default function App() {
   const [flight, setFlight] = useState([]);
   const [search, setSearch] = useState("");
 
-  // const handleChange = (e) => {
-  //   setSearch(e.target.value);
-  // };
-
   const handleChange = (e) => {
-    const { value } = e.target;
-    setSearch(value);
+    setSearch(e.target.value);
   };
 
   //filter name
@@ -28,8 +22,9 @@ function App() {
   );
 
   useEffect(() => {
+    let baseURL = "https://api.spaceflightnewsapi.net/v3/articles?_limit=10";
     axios
-      .get("https://api.spaceflightnewsapi.net/v3/articles")
+      .get(baseURL)
       .then((res) => {
         setFlight(res.data);
         console.log(res.data);
@@ -68,15 +63,10 @@ function App() {
           </form>
         </Col>
         <Select />
-        {/* <Search onChange={handleChange} /> */}
       </Row>
 
-      <div className="d-flex justify-content-center">
-        <img src={rocket} alt="rocket" width="150px" />
-      </div>
+      <Header />
 
-      <h1 className="text-center mt-4">Space flight news</h1>
-      <hr />
       {filterCards.map((flight) => {
         return (
           <Card
@@ -90,18 +80,6 @@ function App() {
           />
         );
       })}
-      {/* {flight.map((filme) => (
-        <div key={filme.id}>
-          <h2> {filme.title}</h2>
-          <img src={filme.imageUrl} alt={filme.title} />
-          <p>{filme.publishedAt}</p>
-          <p>{filme.newsSite}</p>
-          <p>{filme.summary}</p>
-          <a href={filme.url}>Ver mais</a>
-        </div>
-      ))} */}
     </div>
   );
 }
-
-export default App;

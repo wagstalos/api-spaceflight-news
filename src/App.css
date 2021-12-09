@@ -1,5 +1,13 @@
-.card {
-  text-align: center;
+.fl-card img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* mobile */
+@media screen and (max-width: 650px) {
+  .fl-card img {
+    max-width: 100%;
+  }
 }
 
 form svg {

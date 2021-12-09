@@ -12,15 +12,15 @@ function Card({ id, title, imageUrl, publishedAt, newsSite, summary, url }) {
 
         <div className="p-4">
           <h3> {title}</h3>
-          <div className="d-flex justify-content-between mt-2">
-            <span>{publishedAt}</span>
-            <Badge color="secondary">
+          <div className="d-flex justify-content-between mt-2 mb-4">
+            <span>{publishedAt.slice(0, -14).split('-').reverse().join('/')}</span>
+            <Badge color="warning">
               {newsSite}
             </Badge>
           </div>
 
           <p>{summary}</p>
-          <a href={url} className="btn btn-secondary">
+          <a href={url} className="btn btn-danger">
             Ver mais
           </a>
         </div>
