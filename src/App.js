@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Input } from "reactstrap";
 import axios from "axios";
 import "./App.css";
-import Card from "./components/Card";
-import Select from "./components/Select";
-import Header from "./components/Header";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import Card from "./components/Card";
+import Header from "./components/Header";
 
 export default function App() {
   const [flight, setFlight] = useState([]);
@@ -34,9 +32,10 @@ export default function App() {
 
   return (
     <div className="container mx-auto m-4">
+      <Header />
       <Row>
-        <Col md={6} />
-        <Col md={4}>
+        {/* <Col md={6} /> */}
+        <Col md={12}>
           <form className="d-flex justify-content-end mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +44,7 @@ export default function App() {
               height="25"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              stroke="#fff"
+              stroke="#E94560"
               fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -62,10 +61,7 @@ export default function App() {
             />
           </form>
         </Col>
-        <Select />
       </Row>
-
-      <Header />
 
       {filterCards.map((flight) => {
         return (
@@ -75,7 +71,7 @@ export default function App() {
             imageUrl={flight.imageUrl}
             publishedAt={flight.publishedAt}
             newsSite={flight.newsSite}
-            summary={flight.summary}
+            summary={flight.summary.substr(0, 170)}
             url={flight.url}
           />
         );

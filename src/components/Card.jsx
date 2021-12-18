@@ -5,7 +5,7 @@ import "./card.css"
 function Card({ id, title, imageUrl, publishedAt, newsSite, summary, url }) {
   return (
     <div className="row fl-card p-4">
-      <div key={id} className="col-12 col-md-10 mx-auto d-flex flex-column flex-sm-row">
+      <div key={id} className="fl-card__inner col-12 col-md-10 mx-auto d-flex flex-column flex-sm-row">
         <div className="p-4">
           <img className="img-fluid" src={imageUrl} alt={title} />
         </div>
@@ -20,8 +20,8 @@ function Card({ id, title, imageUrl, publishedAt, newsSite, summary, url }) {
           </div>
 
           <p>{summary}</p>
-          <a href={url} className="btn btn-danger">
-            Ver mais
+          <a href={url} className="btn btn-flight text-light mt-2">
+            VER MAIS
           </a>
         </div>
       </div>

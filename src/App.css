@@ -1,6 +1,44 @@
+.gradient__text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fl-card__inner {
+  background-color: var(--color-blue-dark);
+  border-radius: 10px;
+  display: table-row-group;
+}
+
 .fl-card img {
   max-width: 300px;
-  height: auto;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.bg-warning {
+  color: var(--color-blue-dark);
+  border-radius: 20px;
+  padding: 5px 25px;
+}
+
+.btn-flight {
+  background-color: var(--color-main);
+  font-size: 15px;
+  box-shadow: 0 0 0 4px rgb(253 87 108 / 25%);
+  -webkit-transition: box-shadow .2s, color .2s, background-color .2s;
+  transition: box-shadow .2s, color .2s, background-color .2s;
+  border-radius: 20px;
+  transition: all .5s;
+}
+
+.btn-flight:hover {
+  box-shadow: 0 0 0 6px rgba(245, 0, 33, 0.4);
+  -webkit-transition: box-shadow .2s, color .2s, background-color .2s;
+  transition: box-shadow .2s, color .2s, background-color .2s;
+  transition: all .5s;
 }
 
 /* mobile */
@@ -10,9 +48,22 @@
   }
 }
 
+form {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.form-control {
+  background-color: #0a0f22;
+  border: 1px solid #4a4c5d;
+  border-radius: 1.25rem;
+
+}
+
 form svg {
   position: absolute;
-  background-color: #2c2c2c;
   margin-top: 6px;
   margin-left: -5px;
   border-radius: 3px;
